@@ -26,11 +26,12 @@ export const createModal = () => {
   inputField.type = "text";
   inputField.placeholder = "Your prompt";
   inputField.style.width = "100%";
-  inputField.style.padding = "18px 10px";
-  inputField.style.marginBottom = "20px";
+  inputField.style.padding = "20px 13px";
+  inputField.style.margin = "20px 0px";
   inputField.style.border = "1px solid #C1C7D0";
   inputField.style.borderRadius = "8px";
   inputField.style.boxSizing = "border-box";
+  inputField.style.marginTop = "-20px";
 
   // Create a container for the message boxes
   const messageContainer = document.createElement("div");
@@ -56,7 +57,7 @@ export const createModal = () => {
   blueBox.style.display = "none";
   blueBox.style.padding = "12px";
   blueBox.style.borderRadius = "10px";
-  blueBox.style.marginBottom = "10px";
+  blueBox.style.marginBottom = "20px";
   blueBox.style.backgroundColor = "#DBEAFE"; // Blue box for hardcoded text
   blueBox.style.color = "#666D80";
   blueBox.style.fontSize = "14px";
