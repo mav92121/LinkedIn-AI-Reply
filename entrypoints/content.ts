@@ -19,7 +19,7 @@ export default defineContentScript({
           button.style.right = "10px";
           button.style.bottom = "10px";
           button.style.zIndex = "1000";
-          button.textContent = "working..";
+          button.textContent = "qwerty";
           button.style.backgroundImage = "url(../assets/icon.svg)";
           button.style.backgroundSize = "contain";
           button.style.backgroundRepeat = "no-repeat";
@@ -31,9 +31,17 @@ export default defineContentScript({
 
           inputField.style.position = "relative";
           inputField.appendChild(button);
+        }
+
+        let isButtonClicked = false;
+
+        if (button) {
+          button.addEventListener("mousedown", () => {
+            isButtonClicked = true;
+          });
 
           button.addEventListener("click", () => {
-            alert("Button clicked!");
+            console.log("Button clicked");
           });
         }
 
@@ -42,7 +50,12 @@ export default defineContentScript({
         });
 
         inputField.addEventListener("blur", () => {
-          button.style.display = "none";
+          setTimeout(() => {
+            if (!isButtonClicked) {
+              button.style.display = "none";
+            }
+            isButtonClicked = false;
+          }, 100);
         });
       }
     };
